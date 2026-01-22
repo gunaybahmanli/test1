@@ -1,4 +1,4 @@
-<h3 align="center">Real-Time Lakehouse Analytics Platform</h3>
+<h2 align="center">Real-Time Lakehouse Analytics Platform</h2>
 
 ```mermaid
 
@@ -6,8 +6,8 @@
   "theme": "dark",
   "flowchart": {
     "curve": "basis",
-    "nodeSpacing": 40,
-    "rankSpacing": 40
+    "nodeSpacing": 70,
+    "rankSpacing": 70
   }
 }}%%
 
