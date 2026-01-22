@@ -1,49 +1,48 @@
 ```mermaid
-flowchart LR
 
-%% DATA SOURCES
+%% ===== DATA SOURCES =====
 subgraph Data_Sources
-    CSV[Batch CSV<br/>users.csv<br/>products.csv]
-    API[External API<br/>Exchange Rates]
-    KAFKA[Kafka Topic<br/>user_events]
+    CSV[Batch CSV\nusers.csv\nproducts.csv]
+    API[External API\nExchange Rates]
+    KAFKA[Kafka Topic\nuser_events]
 end
 
-%% PROCESSING
+%% ===== INGESTION & PROCESSING =====
 subgraph Processing
     SPARK_BATCH[Spark Batch Jobs]
     SPARK_STREAM[Spark Structured Streaming]
 end
 
-%% LAKEHOUSE
+%% ===== STORAGE (LAKEHOUSE) =====
 subgraph Lakehouse
-    BRONZE[Iceberg Bronze<br/>Raw Data]
-    SILVER[Iceberg Silver<br/>Cleaned Data]
-    GOLD[Iceberg Gold<br/>Business Metrics]
+    BRONZE[Iceberg Bronze\nRaw Data]
+    SILVER[Iceberg Silver\nCleaned & Conformed]
+    GOLD[Iceberg Gold\nBusiness Metrics]
 end
 
-%% TRANSFORMATIONS
+%% ===== TRANSFORMATION =====
 subgraph Transformations
-    DBT[dbt Models<br/>Tests & Snapshots]
+    DBT[dbt Models\nTests & Snapshots]
 end
 
-%% ORCHESTRATION
+%% ===== ORCHESTRATION =====
 subgraph Orchestration
     AIRFLOW[Airflow DAGs]
 end
 
-%% OBSERVABILITY
+%% ===== OBSERVABILITY =====
 subgraph Observability
-    GE[Great Expectations]
+    GE[Great Expectations\nData Quality]
     OL[OpenLineage]
     MARQUEZ[Marquez UI]
 end
 
-%% CONSUMPTION
+%% ===== CONSUMPTION =====
 subgraph Consumption
     STREAMLIT[Streamlit Dashboard]
 end
 
-%% FLOWS
+%% ===== FLOWS =====
 CSV --> SPARK_BATCH
 API --> SPARK_BATCH
 KAFKA --> SPARK_STREAM
