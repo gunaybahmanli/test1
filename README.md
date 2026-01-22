@@ -1,7 +1,7 @@
 ```mermaid
 
 %%{init: {
-  "theme": "dark",
+  "theme": "light",
   "flowchart": {
     "curve": "basis",
     "nodeSpacing": 40,
