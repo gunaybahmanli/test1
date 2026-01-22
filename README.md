@@ -1,4 +1,5 @@
 ```mermaid
+flowchart LR
 
 %% ===== DATA SOURCES =====
 subgraph Data_Sources
