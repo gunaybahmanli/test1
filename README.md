@@ -1,3 +1,5 @@
+# Real-Time Lakehouse Analytics Platform
+
 ```mermaid
 
 %%{init: {
