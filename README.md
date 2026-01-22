@@ -1,6 +1,4 @@
-<p align="center">
-  # Real-Time Lakehouse Analytics Platform.
-</p>
+<h3 align="center">Real-Time Lakehouse Analytics Platform</h3>
 
 ```mermaid
 
