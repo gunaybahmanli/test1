@@ -6,7 +6,7 @@
   "theme": "dark",
   "flowchart": {
     "curve": "basis",
-    "nodeSpacing": 50,
+    "nodeSpacing": 60,
     "rankSpacing": 70
   }
 }}%%
