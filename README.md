@@ -3,7 +3,7 @@
 %%{init: {
   "theme": "dark",
   "flowchart": {
-    "curve": "monotone",
+    "curve": "basis",
     "nodeSpacing": 40,
     "rankSpacing": 40
   }
