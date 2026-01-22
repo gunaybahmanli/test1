@@ -1,49 +1,67 @@
 ```mermaid
 flowchart LR
 
-%% ===== DATA SOURCES =====
+%%{init: {
+  "theme": "dark",
+  "flowchart": {
+    "curve": "basis",
+    "nodeSpacing": 50,
+    "rankSpacing": 70
+  }
+}}%%
+
+flowchart LR
+
+classDef source fill:#2d2d2d,stroke:#facc15,color:#facc15
+classDef processing fill:#1e293b,stroke:#a855f7,color:#e9d5ff
+classDef storage fill:#0f172a,stroke:#38bdf8,color:#bae6fd
+classDef transform fill:#020617,stroke:#22c55e,color:#bbf7d0
+classDef orchestration fill:#18181b,stroke:#fb7185,color:#fecdd3
+classDef observability fill:#111827,stroke:#f97316,color:#fed7aa
+classDef consumption fill:#020617,stroke:#eab308,color:#fef08a
+
 subgraph Data_Sources
-    CSV[Batch CSV\nusers.csv\nproducts.csv]
-    API[External API\nExchange Rates]
-    KAFKA[Kafka Topic\nuser_events]
+    CSV[users.csv<br/>products.csv]
+    API[Exchange Rates API]
+    KAFKA[Kafka<br/>user_events]
 end
+class CSV,API,KAFKA source
 
-%% ===== INGESTION & PROCESSING =====
 subgraph Processing
-    SPARK_BATCH[Spark Batch Jobs]
-    SPARK_STREAM[Spark Structured Streaming]
+    SPARK_BATCH[Spark Batch]
+    SPARK_STREAM[Spark Streaming]
 end
+class SPARK_BATCH,SPARK_STREAM processing
 
-%% ===== STORAGE (LAKEHOUSE) =====
 subgraph Lakehouse
-    BRONZE[Iceberg Bronze\nRaw Data]
-    SILVER[Iceberg Silver\nCleaned & Conformed]
-    GOLD[Iceberg Gold\nBusiness Metrics]
+    BRONZE[Iceberg Bronze]
+    SILVER[Iceberg Silver]
+    GOLD[Iceberg Gold]
 end
+class BRONZE,SILVER,GOLD storage
 
-%% ===== TRANSFORMATION =====
 subgraph Transformations
-    DBT[dbt Models\nTests & Snapshots]
+    DBT[dbt Models<br/>Tests & Snapshots]
 end
+class DBT transform
 
-%% ===== ORCHESTRATION =====
 subgraph Orchestration
     AIRFLOW[Airflow DAGs]
 end
+class AIRFLOW orchestration
 
-%% ===== OBSERVABILITY =====
 subgraph Observability
-    GE[Great Expectations\nData Quality]
+    GE[Great Expectations]
     OL[OpenLineage]
     MARQUEZ[Marquez UI]
 end
+class GE,OL,MARQUEZ observability
 
-%% ===== CONSUMPTION =====
 subgraph Consumption
     STREAMLIT[Streamlit Dashboard]
 end
+class STREAMLIT consumption
 
-%% ===== FLOWS =====
 CSV --> SPARK_BATCH
 API --> SPARK_BATCH
 KAFKA --> SPARK_STREAM
