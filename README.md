@@ -3,7 +3,7 @@
 %%{init: {
   "theme": "dark",
   "flowchart": {
-    "curve": "linear",
+    "curve": "catmullRom",
     "nodeSpacing": 40,
     "rankSpacing": 40
   }
