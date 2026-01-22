@@ -4,8 +4,8 @@
   "theme": "dark",
   "flowchart": {
     "curve": "basis",
-    "nodeSpacing": 50,
-    "rankSpacing": 70
+    "nodeSpacing": 30,
+    "rankSpacing": 50
   }
 }}%%
 
