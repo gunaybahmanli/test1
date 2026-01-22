@@ -91,5 +91,5 @@ linkStyle 0,1,2 stroke:#facc15,stroke-width:2px
 linkStyle 3,4 stroke:#a855f7,stroke-width:2px
 linkStyle 5,6,7 stroke:#38bdf8,stroke-width:2px
 linkStyle 9,10,11 stroke:#fb7185,stroke-width:2px
-linkStyle 11,12,13,14 stroke:#f97316,stroke-width:2px
-linkStyle 8,15 stroke:#22c55e,stroke-width:2px
+linkStyle 16 stroke:#f97316,stroke-width:2px
+linkStyle 8,12,13,15 stroke:#22c55e,stroke-width:2px
