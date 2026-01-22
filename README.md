@@ -1,6 +1,3 @@
-```mermaid
-flowchart LR
-
 %%{init: {
   "theme": "dark",
   "flowchart": {
